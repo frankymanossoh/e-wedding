@@ -1,0 +1,118 @@
+.font-body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+#cover {
+    background-color: #1a1a1a;
+    /* Gambar default untuk desktop dan layar lebar */
+    background-image: url('bg-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative; 
+}
+
+.couple-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.floating-ornament {
+    position: absolute;
+    bottom: -150px;
+    color: white;
+    opacity: 0;
+    animation: floatUp 20s infinite linear;
+    will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1; /* Diubah menjadi 1 (penuh) agar partikel terlihat jelas */
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Style untuk container tombol */
+.button-container {
+    margin-top: 2rem; 
+}
+
+/* Style untuk tombol Open Invitation */
+.open-invitation {
+    border-width: 2px; 
+    font-weight: 500; 
+    letter-spacing: 0.1em; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* Animasi terbang masuk untuk tombol */
+.animate-button-in {
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInSlideUp 1s ease-out forwards; 
+    animation-delay: 0.8s; 
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek ikon bergerak saat hover */
+.open-invitation i {
+    transition: transform 0.3s ease; 
+    margin-right: 0.5rem; 
+}
+
+.open-invitation:hover i {
+    transform: translateX(5px); 
+}
+
+/* Media Query untuk perangkat mobile */
+/* Aturan ini akan menimpa background-image di atas ketika lebar layar kurang dari atau sama dengan 768px */
+@media (max-width: 768px) {
+    #cover {
+        /* GANTI NAMA FILE INI DENGAN NAMA FILE MOBILE BARU ANDA YANG SUDAH DIEDIT */
+        background-image: url('bg-image-mobile.jpg'); 
+        background-size: cover; 
+        background-position: center center; 
+    }
+    #cover .absolute.inset-0.bg-black\/60 {
+        background-color: rgba(0, 0, 0, 0.3);
+}
+}
