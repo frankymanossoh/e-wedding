@@ -1,0 +1,105 @@
+.font-body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+#cover {
+    background-color: #1a1a1a;
+    /* Nama gambar: bg-image.jpg */
+    background-image: url('bg-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative; 
+}
+
+.couple-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.floating-ornament {
+    position: absolute;
+    bottom: -150px;
+    color: white;
+    opacity: 0;
+    animation: floatUp 20s infinite linear;
+    will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 2; 
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Style untuk container tombol */
+.button-container {
+    margin-top: 2rem; 
+}
+
+/* Style untuk tombol Open Invitation */
+.open-invitation {
+    border-width: 2px; 
+    font-weight: 500; 
+    letter-spacing: 0.1em; 
+    /* Transisi untuk efek hover ikon */
+    position: relative; /* Diperlukan untuk positioning ikon */
+    overflow: hidden; /* Pastikan ikon tidak terlihat saat tidak hover jika ada efek off-screen */
+}
+
+/* Animasi terbang masuk untuk tombol */
+.animate-button-in {
+    opacity: 0; /* Mulai dari tidak terlihat */
+    transform: translateY(20px); /* Mulai sedikit di bawah */
+    animation: fadeInSlideUp 1s ease-out forwards; /* Animasi custom */
+    animation-delay: 0.8s; /* Penundaan agar muncul setelah elemen lain */
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek ikon bergerak saat hover */
+.open-invitation i {
+    transition: transform 0.3s ease; /* Transisi untuk pergerakan ikon */
+    margin-right: 0.5rem; /* Beri sedikit jarak antara ikon dan teks */
+}
+
+.open-invitation:hover i {
+    transform: translateX(5px); /* Geser ikon ke kanan saat hover */
+}
