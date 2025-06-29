@@ -52,7 +52,7 @@ body {
     /* Terapkan animasi slide dan fade, dimulai bersamaan (delay 0s) */
     opacity: 0; /* Mulai tidak terlihat */
     transform: translateY(-50px); /* Mulai di atas */
-    animation: slideDownFadeInCover 3s ease-out forwards; /* Durasi 2 detik */
+    animation: slideDownFadeInCover 2s ease-out forwards; /* Durasi 2 detik */
     animation-delay: 0s; 
 }
 
@@ -120,7 +120,7 @@ body {
 .animate-button-in {
     opacity: 0; 
     transform: translateY(20px); 
-    animation: fadeInSlideUp 1s ease-out forwards; 
+    animation: fadeInSlideUp 2s ease-out forwards; 
     /* Delay disesuaikan agar muncul setelah animasi utama selesai */
     animation-delay: 0s; 
 }
