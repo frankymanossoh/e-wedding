@@ -122,7 +122,7 @@ body {
     transform: translateY(20px); 
     animation: fadeInSlideUp 1s ease-out forwards; 
     /* Delay disesuaikan agar muncul setelah animasi utama selesai */
-    animation-delay: 2.2s; 
+    animation-delay: 0s; 
 }
 
 @keyframes fadeInSlideUp {
